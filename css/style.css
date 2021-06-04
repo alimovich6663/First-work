@@ -61,11 +61,49 @@ p {
   margin-bottom: 25px;
   text-transform: capitalize;
 }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0) scale(1.2) ;
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
 /* header start */
 
 .header__nav {
+  position: relative;
   margin-bottom: 30px;
 }
+
+.header__nav::before {
+  content: '';
+  position: absolute;
+  width: 3.5vw;
+  height: 3.7vw;
+  left: 243.95px;
+  top: 32px;
+  border-radius: 50%;
+  border: 0.3vw solid #790FF1;
+  animation: rotate 3s linear infinite alternate;
+  z-index: -1;
+}
+
+.header__nav::after {
+  content: '';
+  position: absolute;
+  width: 4vw;
+  height: 4vw;
+  left: 73.66px;
+  top: 92.64px;
+  border: 0.3vw solid #9297EF;
+  animation: rotate 3s linear infinite alternate;
+  z-index: -1;
+}
+
 
 .header__list {
   column-gap: 30px;
@@ -131,6 +169,34 @@ p {
   transform: rotate(45deg);
 }
 
+.header__content {
+  position: relative;
+}
+
+.header__content::before {
+  content: '';
+  position: absolute;
+  width: 5vw;
+  height: 5vw;
+  right: 5%;
+  top: 10%;
+  border: 0.3vw solid #9297EF;
+  z-index: -1;
+  animation: rotate 3s linear infinite alternate;
+}
+
+.header__content::after {
+  content: '';
+  position: absolute;
+  width: 4vw;
+  height: 4vw;
+  right: 15%;
+  top: 71%;
+  border: 0.3vw solid #7177F1;
+  z-index: -1;
+  animation: rotate 3s linear infinite alternate;
+}
+
 .header__content-subtitle {
   font-size: 24px;
   font-weight: 600;
@@ -185,3 +251,69 @@ p {
 }
 
 /* header end */
+
+
+
+/* about start */
+
+.about {
+  position: relative;
+}
+
+.about::after {
+  content: url(../img/svg/figure_1.svg);
+  position: absolute;
+  top: -70%;
+  right: 0;
+  z-index: -1;
+}
+
+.about__work {
+  position: relative;
+  max-width: 190px;
+  width: 100% ;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 20px 0;
+  top: 85px;
+  left: -15px;
+}
+
+.about__ball { 
+  font-size: 18px; 
+  font-weight: 700;
+  font-style: italic;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #0fdac2;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+}
+
+.about__desc {
+  box-shadow: 0px 0px 5px 3px rgba(113, 119, 241, 0.15);
+  border-radius: 8px;
+  background: var(--body);
+  padding: 30px;
+}
+
+.about__desc-txt {
+  font-size: 18px;
+  line-height: 150%;
+  color: var(--txt);
+  margin-bottom: 30px;
+  text-transform: capitalize;
+}
+
+.about__desc-btn {
+  font-size: 18px;
+  max-width: 190px;
+  width: 100%;
+  text-transform: uppercase;
+} 
+
+/* about end */
