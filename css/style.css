@@ -53,6 +53,7 @@ p {
   background: #fff;
   color: var(--btn) !important;
 }
+
 .title {
   font-size: 40px;
   font-weight: 600;
@@ -64,19 +65,19 @@ p {
 
 @keyframes rotate {
   0% {
-    transform: rotate(0) scale(1.2) ;
+    transform: rotate(0) scale(1.2);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
 
-
 /* header start */
 
 .header__nav {
-  position: relative;
   margin-bottom: 30px;
+  position: relative;
 }
 
 .header__nav::before {
@@ -87,7 +88,7 @@ p {
   left: 243.95px;
   top: 32px;
   border-radius: 50%;
-  border: 0.3vw solid #790FF1;
+  border: .3vw solid #790FF1;
   animation: rotate 3s linear infinite alternate;
   z-index: -1;
 }
@@ -99,11 +100,10 @@ p {
   height: 4vw;
   left: 73.66px;
   top: 92.64px;
-  border: 0.3vw solid #9297EF;
+  border: .3vw solid #9297EF;
   animation: rotate 3s linear infinite alternate;
   z-index: -1;
 }
-
 
 .header__list {
   column-gap: 30px;
@@ -180,7 +180,7 @@ p {
   height: 5vw;
   right: 5%;
   top: 10%;
-  border: 0.3vw solid #9297EF;
+  border: .3vw solid #9297EF;
   z-index: -1;
   animation: rotate 3s linear infinite alternate;
 }
@@ -191,8 +191,8 @@ p {
   width: 4vw;
   height: 4vw;
   right: 15%;
-  top: 71%;
-  border: 0.3vw solid #7177F1;
+  top: 70%;
+  border: .3vw solid #7177F1;
   z-index: -1;
   animation: rotate 3s linear infinite alternate;
 }
@@ -212,13 +212,15 @@ p {
 }
 
 .header__tech-card:first-of-type .header__tech-brand {
-  color: #E44F26;  
+  color: #E44F26;
 }
-.header__tech-card:nth-of-type(2) .header__tech-brand {
-  color: #1572B6;  
+
+.header__tech-card:nth-of-type(2) .header__tech-brand  {
+  color: #1572B6;
 }
+
 .header__tech-card:last-of-type .header__tech-brand {
-  color:  #790FF1;
+  color: #790FF1;
 }
 
 .header__tech-name {
@@ -228,7 +230,7 @@ p {
   text-transform: uppercase;
 }
 
-.haeder__carousel-indicators {
+.header__carousel-indicators {
   position: static;
   margin: 50px 0 0;
   column-gap: 30px;
@@ -240,6 +242,7 @@ p {
   border-radius: 50%;
   background: var(--dots) !important;
   border: none !important;
+  opacity: 1 !important;
 }
 
 .header__carousel-dot.active {
@@ -251,8 +254,6 @@ p {
 }
 
 /* header end */
-
-
 
 /* about start */
 
@@ -271,22 +272,22 @@ p {
 .about__work {
   position: relative;
   max-width: 190px;
-  width: 100% ;
+  width: 100%;
   font-size: 18px;
   text-transform: uppercase;
   padding: 20px 0;
   top: 85px;
-  left: -15px;
+  left: -15%;
 }
 
-.about__ball { 
-  font-size: 18px; 
+.about__ball {
+  font-size: 18px;
   font-weight: 700;
   font-style: italic;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #0fdac2;
+  background: #0FDAC2;
   display: grid;
   place-items: center;
   position: absolute;
@@ -314,6 +315,85 @@ p {
   max-width: 190px;
   width: 100%;
   text-transform: uppercase;
-} 
+}
 
 /* about end */
+
+
+/* capabilities start */
+
+.capabilities {
+  padding: 80px 0;
+}
+
+.capabilities__title {
+  margin-bottom: 30px;
+}
+
+.accordion {
+  box-shadow: 0px 0px 5px 3px rgba(113, 119, 241, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.accordion__button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 900;
+  border: none;
+  padding: 15px 30px;
+  background: var(--btn);
+  transition: .4s;
+  color: #FFFF;
+  position: relative;
+}
+
+.accordion__button.collapsed {
+  background: var(--body);
+  color: var(--title);
+}
+
+.accordion__body {
+  font-size: 18px;
+  line-height: 150%;
+  background: var(--btn);
+  padding: 30px;
+}
+
+.accordion__icon-down {
+  transition: .2s;
+  font-size: 25px;
+}
+
+.accordion__button.collapsed .accordion__icon-down {
+  transform: rotate(180deg);
+}
+
+.accordion__item:first-of-type .accordion__button.collapsed .accordion__brand {
+  color: #E44F26; 
+}
+
+.accordion__item:nth-of-type(2) .accordion__button.collapsed .accordion__brand {
+  color: #1572B6;
+}
+
+.accordion__item:last-of-type .accordion__button.collapsed .accordion__brand  {
+  color: #790FF1;
+}
+
+.accordion__item:first-of-type .accordion__button.collapsed::after,
+.accordion__item:nth-of-type(2) .accordion__button.collapsed::after {
+  content: '';
+  position: absolute;
+  width: 95%;
+  height: 1px;
+  background: #ddd;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* capabilities end */
